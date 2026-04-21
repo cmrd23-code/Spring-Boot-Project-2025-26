@@ -52,4 +52,27 @@ public class StudentServiceImpl implements StudentService {
     public void addStudent(StudentDTO s) {
         studentRepository.save(modelMapper.map(s,StudentEntity.class));
     }
+
+    @Override
+    public StudentDTO update(Long id, StudentDTO s) {
+        Optional<StudentEntity> se = studentRepository.findById(id)
+                .map(st -> {
+                    st.setName(s.getName());
+                    st.setMarks(s.getMarks());
+                    return st;
+                });
+
+        if (se.isPresent()) {
+            StudentEntity updatedEntity = studentRepository.save(se.get());
+
+            StudentDTO sd = new StudentDTO();
+            sd.setId(updatedEntity.getId());
+            sd.setName(updatedEntity.getName());
+            sd.setMarks(updatedEntity.getMarks());
+
+            return sd;
+        } else {
+            return new StudentDTO();
+        }
+    }
 }

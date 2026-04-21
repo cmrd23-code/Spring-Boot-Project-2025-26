@@ -13,4 +13,6 @@ public interface StudentService {
     StudentDTO geStudentById(Long id);
     void deleteStudents();
     void addStudent(StudentDTO s);
+
+    StudentDTO update(Long id, StudentDTO s);
 }
