@@ -23,7 +23,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public ArrayList<StudentDTO> getAllStudents() {
         ArrayList<StudentDTO> st=new ArrayList<>();
-        st.add(new StudentDTO(1L,"abhay",95.0));
+        st.add(new StudentDTO(1L,"abhay1",95.0));
+        st.add(new StudentDTO(2L,"abhay2",95.0));
+        st.add(new StudentDTO(3L,"abhay3",95.0));
+        st.add(new StudentDTO(4L,"abhay4",95.0));
         return st;
     }
 
