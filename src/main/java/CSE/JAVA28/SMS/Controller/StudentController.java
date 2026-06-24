@@ -11,7 +11,9 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://cmrd23-code.github.io/SMSapp/")
+    
 public class StudentController {
 
     private final StudentService studentService;
